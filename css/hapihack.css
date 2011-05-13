@@ -46,6 +46,10 @@ body {
 	margin-top: 1em;
 }
 
+#apis {
+  margin-top: 1em;
+}
+
 p, table {
 	margin-bottom: 1em;
 }
@@ -81,6 +85,14 @@ strong {
 
 .logo {
   width: 300px;
+}
+
+#api-list li {
+  margin: 12px;
+}
+
+#api-list img {
+  width: 180px;
 }
 
 .day {
