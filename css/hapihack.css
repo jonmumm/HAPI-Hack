@@ -88,7 +88,8 @@ strong {
 }
 
 #api-list li {
-  margin: 12px;
+  /*margin: 12px;*/
+  margin: 12px 0;
 }
 
 #api-list img {
