@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>HAPI Hack Feed</title>
+	
+	<style>
+		.twtr-widget {
+			margin: 10px 0;
+		}
+		
+		.twtr-widget-profile .twtr-bd {
+			font-size: 2.4em;
+		}
+		
+		.twtr-tweet-text em {
+			display: none !important;
+		}
+		
+		.twtr-join-conv {
+			display: none !important;
+		}
+	</style>
+	
+</head>
+
+<body style="background: #555">
+	
+	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+	<script>
+	new TWTR.Widget({
+	  version: 2,
+	  type: 'profile',
+	  rpp: 1,
+	  interval: 6000,
+	  width: 'auto',
+	  height: 100,
+	  theme: {
+	    shell: {
+	      background: '#ffab24',
+	      color: '#0a0a0a'
+	    },
+	    tweets: {
+	      background: '#ffffff',
+	      color: '#8c8c8c',
+	      links: '#5787ff'
+	    }
+	  },
+	  features: {
+	    scrollbar: false,
+	    loop: false,
+	    live: true,
+	    hashtags: true,
+	    timestamp: true,
+	    avatars: true,
+	    behavior: 'all'
+	  }
+	}).render().setUser('hapihack').start();
+	</script>
+
+	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+	<script>
+	new TWTR.Widget({
+	  version: 2,
+	  type: 'search',
+	  search: 'hapihack',
+	  interval: 6000,
+	  title: 'HAPI Hack Weekend',
+	  subject: '#hapihack LIVE FEED',
+	  width: 'auto',
+	  height: 300,
+	  theme: {
+	    shell: {
+	      background: '#8ec1da',
+	      color: '#ffffff'
+	    },
+	    tweets: {
+	      background: '#ffffff',
+	      color: '#444444',
+	      links: '#1985b5'
+	    }
+	  },
+	  features: {
+	    scrollbar: false,
+	    loop: false,
+	    live: true,
+	    hashtags: true,
+	    timestamp: true,
+	    avatars: true,
+	    toptweets: true,
+	    behavior: 'all'
+	  }
+	}).render().start();
+	</script>
+
+</body>
+</html>
