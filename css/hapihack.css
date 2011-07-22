@@ -110,3 +110,7 @@ a:hover {
 	text-decoration: underline;
 	color: #f90;
 }
+
+#pastEvents {
+	margin-top: 1em;
+}
