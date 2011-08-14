@@ -19,7 +19,10 @@
     function sessionConnectedHandler(event) {
       // Publish my webcam stream and put it in a div
 			var uniqueTitle = "HAPIHack_Demos_" + new Date().getTime();
-			session.addEventListener("archiveCreated", archiveCreatedHandler)
+			
+			publisher = session.publish('myPublisherDiv');
+			
+			// session.addEventListener("archiveCreated", archiveCreatedHandler)
 			session.createArchive(apiKey, "perSession", uniqueTitle);
 		}
 		function archiveCreatedHandler(event) {
@@ -28,7 +31,7 @@
 			var log = document.getElementById("log");
 			log.innerHTML = "archive ID: " + myArchive.archiveId;
 			session.startRecording(myArchive);
-      publisher = session.publish('myPublisherDiv');
+      // publisher = session.publish('myPublisherDiv');
     }
   </script>
  
