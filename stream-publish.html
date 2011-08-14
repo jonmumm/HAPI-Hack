@@ -6,7 +6,7 @@
   <script type="text/javascript">
     var apiKey = '1127';
     var sessionId = '278ea4babc04fba003a6664db91b9aff6ab597b0';
-    var token = 'devtoken';           
+    var token = 'moderator_token';           
      
     TB.setLogLevel(TB.DEBUG);     
  
@@ -18,6 +18,16 @@
  
     function sessionConnectedHandler(event) {
       // Publish my webcam stream and put it in a div
+			var uniqueTitle = "HAPIHack_Demos_" + new Date().getTime();
+			session.addEventListener("archiveCreated", archiveCreatedHandler)
+			session.createArchive(apiKey, "perSession", uniqueTitle);
+		}
+		function archiveCreatedHandler(event) {
+			alert(234);
+			myArchive = event.archives[0];
+			var log = document.getElementById("log");
+			log.innerHTML = "archive ID: " + myArchive.archiveId;
+			session.startRecording(myArchive);
       publisher = session.publish('myPublisherDiv');
     }
   </script>
@@ -26,5 +36,6 @@
  
 <body>
   <div id="myPublisherDiv"></div>
+  <div id="log"></div>
 </body>
 </html>
